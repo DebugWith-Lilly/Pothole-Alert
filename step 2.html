@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 2</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="phone">
+    <div class="screen">
+
+        <!-- STATUS BAR -->
+        <div class="status-bar">
+            <span id="time"></span>
+            <span id="battery">🔋 --%</span>
+        </div>
+
+        <!-- STEPS "NAVBAR" -->
+        <div class="steps">
+            <div class="step active">1<br><span>Location</span></div>
+            <div class="step">2<br><span>Details</span></div>
+            <div class="step">3<br><span>Confirm</span></div>
+        </div>
+
+        <!-- UPLOAD PICTURE -->
+        <div class="upload-section">
+
+            <label for="photoUpload" class="upload-btn">
+                Upload Picture
+            </label>
+
+            <input 
+                type="file" 
+                id="photoUpload" 
+                accept="image/*"
+                hidden
+            >
+
+        </div>
+
+        <!-- DESCRIPTION (OPTIONAL)-->
+        <input 
+            type="text" 
+            id="details" 
+            placeholder="Describe the pothole (optional: size, depth, etc.)"
+        >
+
+        <!-- BUTTON -->
+        <button class="next">Next</button>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
