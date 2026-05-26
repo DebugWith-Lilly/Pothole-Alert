@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pothole Alert</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Mapbox -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"></script>
+</head>
+
+<body>
+
+<div class="phone">
+    <div class="screen">
+
+        <!-- STATUS BAR -->
+        <div class="status-bar">
+            <span id="time"></span>
+            <span>🔋 85%</span>
+        </div>
+
+        <!-- STEP INDICATION -->
+        <div class="steps">
+            <div class="step active">1<br><span>Location</span></div>
+            <div class="step">2<br><span>Details</span></div>
+            <div class="step">3<br><span>Confirm</span></div>
+        </div>
+
+        <!-- MAPBOX MAP -->
+        <div id="map"></div>
+
+        <!-- LOCATION INPUT -->
+        <input type="text" id="location" placeholder="Getting your location">
+
+        <!-- BUTTONS -->
+        <button onclick="getLocation()">Use My Location</button>
+        <button class="next">Next</button>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
