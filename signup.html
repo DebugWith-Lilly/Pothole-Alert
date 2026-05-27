@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Pothole Alert</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="phone">
+    <div class="screen">
+
+        <!-- STATUS BAR -->
+        <div class="status-bar">
+            <span id="time"></span>
+            <span id="battery">🔋 --%</span>
+        </div>
+
+        <!-- SIGNUP PAGE -->
+        <div class="page active">
+
+            <div class="app-content">
+
+                <h2>Create Account</h2>
+
+                <!-- PROFILE PICTURE -->
+                <label class="pfp-upload">
+                    <input type="file" accept="image/*" id="pfpInput">
+                    <img id="pfpPreview" class="pfp-circle" src="" alt="">
+                    <p>Upload Profile Picture</p>
+                </label>
+
+                <!-- INPUTS -->
+                <input type="email" placeholder="Email" class="input-box">
+                <input type="tel" placeholder="Phone Number" class="input-box">
+                <input type="password" placeholder="Password" class="input-box">
+
+                <!-- SIGNUP BUTTON -->
+                <button class="signup-btn" id="signupBtn">Sign Up</button>
+
+                <!-- LOGIN LINK -->
+                <p class="login-text">
+                    Already have an account?
+                    <a href="./login.html">Login</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // SIGNUP BUTTON → OTP PAGE
+    document.getElementById("signupBtn").addEventListener("click", function () {
+        window.location.href = "verification.html";
+    });
+</script>
+
+</body>
+</html>
