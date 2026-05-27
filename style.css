@@ -69,3 +69,858 @@ body {
 .login-page {
     display: none;
 }
+/*OTP PAGE */
+.otp-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.otp-box {
+    width: 40px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+/*MAP PAGE */
+#map {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+
+Claim offer
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 2</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="phone">
+    <div class="screen">
+
+        <!-- STATUS BAR -->
+        <div class="status-bar">
+            <span id="time"></span>
+            <span id="battery">🔋 --%</span>
+        </div>
+
+        <!-- STEP INDICATION -->
+        <div class="steps">
+            <div class="step active">1<br><span>Location</span></div>
+            <div class="step">2<br><span>Details</span></div>
+            <div class="step">3<br><span>Confirm</span></div>
+        </div>
+
+        <!-- DESCRIPTION INPUT -->
+        <input 
+            type="text" 
+            id="details" 
+            placeholder="Describe the pothole (e.g., size, depth, etc.)"
+        >
+
+        <!-- UPLOAD PICTURE -->
+        <div class="upload-section">
+            <label for="photoUpload" class="upload-btn">
+                📷 Upload Picture
+            </label>
+
+            <input 
+                type="file" 
+                id="photoUpload" 
+                accept="image/*"
+                hidden
+            >
+
+            <!-- IMAGE PREVIEW -->
+            <img id="preview" src="" alt="Preview Image">
+        </div>
+
+        <!-- BUTTON -->
+        <button class="next">Next</button>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+    const photoUpload = document.getElementById("photoUpload");
+    const preview = document.getElementById("preview");
+
+    photoUpload.addEventListener("change", function () {
+        const file = this.files[0];
+
+        if (file) {
+            preview.src = URL.createObjectURL(file);
+            preview.style.display = "block";
+        }
+    });
+</script>
+
+</body>
+</html>
+
+no only html and js must be seperate
+
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 2</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="phone">
+    <div class="screen">
+
+        <!-- STATUS BAR -->
+        <div class="status-bar">
+            <span id="time"></span>
+            <span id="battery">🔋 --%</span>
+        </div>
+
+        <!-- STEP INDICATION -->
+        <div class="steps">
+            <div class="step active">1<br><span>Location</span></div>
+            <div class="step">2<br><span>Details</span></div>
+            <div class="step">3<br><span>Confirm</span></div>
+        </div>
+
+        <!-- DESCRIPTION INPUT -->
+        <input 
+            type="text" 
+            id="details" 
+            placeholder="Describe the pothole (e.g., size, depth, etc.)"
+        >
+
+        <!-- UPLOAD PICTURE -->
+        <div class="upload-section">
+
+            <label for="photoUpload" class="upload-btn">
+                📷 Upload Picture
+            </label>
+
+            <input 
+                type="file" 
+                id="photoUpload" 
+                accept="image/*"
+                hidden
+            >
+
+            <!-- IMAGE PREVIEW -->
+            <img id="preview" src="" alt="Preview Image">
+
+        </div>
+
+        <!-- BUTTON -->
+        <button class="next">Next</button>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+JavaScript (script.js)
+// IMAGE PREVIEW
+const photoUpload = document.getElementById("photoUpload");
+const preview = document.getElementById("preview");
+
+photoUpload.addEventListener("change", function () {
+
+    const file = this.files[0];
+
+    if (file) {
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = "block";
+    }
+
+});
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1e1e1e;
+    font-family: Arial, sans-serif;
+}
+
+.phone {
+    width: 390px;
+    height: 780px;
+    background: black;
+    border-radius: 50px;
+    padding: 12px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* STATUS BAR */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* APP CONTENT */
+.app-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* LOGO */
+.logo {
+    width: 250px;
+    height: auto;
+}
+
+/* PAGES */
+.page {
+    display: none;
+    height: 100%;
+}
+
+.page.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* LOGIN PAGE */
+.login-page {
+    display: none;
+}
+/*OTP PAGE */
+.otp-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.otp-box {
+    width: 40px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+/*MAP PAGE */
+#map {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+
+include this at the end of my css
+
+/* STEP INDICATOR */
+.steps {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 10px;
+    background: white;
+}
+
+.step {
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+    font-weight: bold;
+}
+
+.step.active {
+    color: #2d8cff;
+}
+
+.step span {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* DETAILS INPUT */
+#details {
+    width: 85%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* UPLOAD SECTION */
+.upload-section {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* UPLOAD BUTTON */
+.upload-btn {
+    background: #2d8cff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* IMAGE PREVIEW */
+#preview {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: none;
+    border: 2px solid #ccc;
+}
+
+/* NEXT BUTTON */
+.next {
+    width: 85%;
+    margin: auto auto 30px auto;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    background: #2d8cff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+gimme the css code for this
+
+/* STEP INDICATOR */
+.steps {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 10px;
+    background: white;
+}
+
+.step {
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+    font-weight: bold;
+}
+
+.step.active {
+    color: #2d8cff;
+}
+
+.step span {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* DETAILS INPUT */
+#details {
+    width: 85%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* UPLOAD SECTION */
+.upload-section {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+
+Claim offer
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 2</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="phone">
+    <div class="screen">
+
+        <!-- STATUS BAR -->
+        <div class="status-bar">
+            <span id="time"></span>
+            <span id="battery">🔋 --%</span>
+        </div>
+
+        <!-- STEP INDICATION -->
+        <div class="steps">
+            <div class="step active">1<br><span>Location</span></div>
+            <div class="step">2<br><span>Details</span></div>
+            <div class="step">3<br><span>Confirm</span></div>
+        </div>
+
+        <!-- DESCRIPTION INPUT -->
+        <input 
+            type="text" 
+            id="details" 
+            placeholder="Describe the pothole (e.g., size, depth, etc.)"
+        >
+
+        <!-- UPLOAD PICTURE -->
+        <div class="upload-section">
+            <label for="photoUpload" class="upload-btn">
+                📷 Upload Picture
+            </label>
+
+            <input 
+                type="file" 
+                id="photoUpload" 
+                accept="image/*"
+                hidden
+            >
+
+            <!-- IMAGE PREVIEW -->
+            <img id="preview" src="" alt="Preview Image">
+        </div>
+
+        <!-- BUTTON -->
+        <button class="next">Next</button>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+    const photoUpload = document.getElementById("photoUpload");
+    const preview = document.getElementById("preview");
+
+    photoUpload.addEventListener("change", function () {
+        const file = this.files[0];
+
+        if (file) {
+            preview.src = URL.createObjectURL(file);
+            preview.style.display = "block";
+        }
+    });
+</script>
+
+</body>
+</html>
+
+no only html and js must be seperate
+
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 2</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="phone">
+    <div class="screen">
+
+        <!-- STATUS BAR -->
+        <div class="status-bar">
+            <span id="time"></span>
+            <span id="battery">🔋 --%</span>
+        </div>
+
+        <!-- STEP INDICATION -->
+        <div class="steps">
+            <div class="step active">1<br><span>Location</span></div>
+            <div class="step">2<br><span>Details</span></div>
+            <div class="step">3<br><span>Confirm</span></div>
+        </div>
+
+        <!-- DESCRIPTION INPUT -->
+        <input 
+            type="text" 
+            id="details" 
+            placeholder="Describe the pothole (e.g., size, depth, etc.)"
+        >
+
+        <!-- UPLOAD PICTURE -->
+        <div class="upload-section">
+
+            <label for="photoUpload" class="upload-btn">
+                📷 Upload Picture
+            </label>
+
+            <input 
+                type="file" 
+                id="photoUpload" 
+                accept="image/*"
+                hidden
+            >
+
+            <!-- IMAGE PREVIEW -->
+            <img id="preview" src="" alt="Preview Image">
+
+        </div>
+
+        <!-- BUTTON -->
+        <button class="next">Next</button>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+JavaScript (script.js)
+// IMAGE PREVIEW
+const photoUpload = document.getElementById("photoUpload");
+const preview = document.getElementById("preview");
+
+photoUpload.addEventListener("change", function () {
+
+    const file = this.files[0];
+
+    if (file) {
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = "block";
+    }
+
+});
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1e1e1e;
+    font-family: Arial, sans-serif;
+}
+
+.phone {
+    width: 390px;
+    height: 780px;
+    background: black;
+    border-radius: 50px;
+    padding: 12px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* STATUS BAR */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* APP CONTENT */
+.app-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* LOGO */
+.logo {
+    width: 250px;
+    height: auto;
+}
+
+/* PAGES */
+.page {
+    display: none;
+    height: 100%;
+}
+
+.page.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* LOGIN PAGE */
+.login-page {
+    display: none;
+}
+/*OTP PAGE */
+.otp-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.otp-box {
+    width: 40px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+/*MAP PAGE */
+#map {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+
+include this at the end of my css
+
+/* STEP INDICATOR */
+.steps {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 10px;
+    background: white;
+}
+
+.step {
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+    font-weight: bold;
+}
+
+.step.active {
+    color: #2d8cff;
+}
+
+.step span {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* DETAILS INPUT */
+#details {
+    width: 85%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* UPLOAD SECTION */
+.upload-section {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* UPLOAD BUTTON */
+.upload-btn {
+    background: #2d8cff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* IMAGE PREVIEW */
+#preview {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: none;
+    border: 2px solid #ccc;
+}
+
+/* NEXT BUTTON */
+.next {
+    width: 85%;
+    margin: auto auto 30px auto;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    background: #2d8cff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+gimme the css code for this
+
+/* STEP INDICATOR */
+.steps {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 10px;
+    background: white;
+}
+
+.step {
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+    font-weight: bold;
+}
+
+.step.active {
+    color: #2d8cff;
+}
+
+.step span {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* DETAILS INPUT */
+#details {
+    width: 85%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* UPLOAD SECTION */
+.upload-section {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* UPLOAD BUTTON */
+.upload-btn {
+    background: #2d8cff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* IMAGE PREVIEW */
+#preview {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: none;
+    border: 2px solid #ccc;
+}
+
+/* NEXT BUTTON */
+.next {
+    width: 85%;
+    margin: auto auto 30px auto;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    background:white;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* UPLOAD SECTION */
+.upload-section {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* UPLOAD BUTTON */
+.upload-btn {
+    background: white;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
