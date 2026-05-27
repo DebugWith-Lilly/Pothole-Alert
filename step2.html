@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step 2</title>
+    <title>Pothole Alert - Step 2</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,14 +19,14 @@
             <span id="battery">🔋 --%</span>
         </div>
 
-        <!-- STEPS "NAVBAR" -->
+        <!-- STEP INDICATION -->
         <div class="steps">
-            <div class="step active">1<br><span>Location</span></div>
-            <div class="step">2<br><span>Details</span></div>
+            <div class="step">1<br><span>Location</span></div>
+            <div class="step active">2<br><span>Details</span></div>
             <div class="step">3<br><span>Confirm</span></div>
         </div>
 
-        <!-- UPLOAD PICTURE -->
+        <!-- UPLOAD -->
         <div class="upload-section">
 
             <label for="photoUpload" class="upload-btn">
@@ -42,18 +42,24 @@
 
         </div>
 
-        <!-- DESCRIPTION (OPTIONAL)-->
+        <!-- DETAILS INPUT -->
         <input 
             type="text" 
             id="details" 
-            placeholder="Describe the pothole (optional: size, depth, etc.)"
+            placeholder="Describe the pothole (optional)"
         >
 
         <!-- BUTTON -->
-        <button class="next">Next</button>
+        <button class="next" id="nextBtn">Next</button>
 
     </div>
 </div>
+
+<script>
+    document.getElementById("nextBtn").addEventListener("click", function () {
+        window.location.href = "step3.html";
+    });
+</script>
 
 <script src="script.js"></script>
 
