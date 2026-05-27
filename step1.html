@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pothole Alert</title>
+    <title>Pothole Alert - Step 1</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,7 +16,7 @@
         <!-- STATUS BAR -->
         <div class="status-bar">
             <span id="time"></span>
-            <span>🔋 85%</span>
+            <span id="battery">🔋 --%</span>
         </div>
 
         <!-- STEP INDICATION -->
@@ -26,16 +26,14 @@
             <div class="step">3<br><span>Confirm</span></div>
         </div>
 
-        <!-- GOOGLE MAP EMBED -->
+        <!-- MAP -->
         <div class="map">
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d797.7501960515931!2d31.06973893859383!3d-29.729199786275107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef705e59adcc74d%3A0x2bd4b97d7404caf5!2siKhokha!5e0!3m2!1sen!2sza!4v1779807979670!5m2!1sen!2sza"
                 width="100%"
                 height="250"
                 style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
+                loading="lazy">
             </iframe>
         </div>
 
@@ -44,10 +42,18 @@
 
         <!-- BUTTONS -->
         <button onclick="getLocation()">Use My Location</button>
-        <button class="next">Next</button>
+
+        <!-- ✅ NEXT BUTTON FIXED -->
+        <button class="next" id="nextBtn">Next</button>
 
     </div>
 </div>
+
+<script>
+    document.getElementById("nextBtn").addEventListener("click", function () {
+        window.location.href = "step2.html";
+    });
+</script>
 
 <script src="script.js"></script>
 
