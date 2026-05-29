@@ -12,25 +12,245 @@
 <div class="phone">
     <div class="screen">
 
-        <!-- STATUS BAR -->
-        <div class="status-bar">
-            <span id="time"></span>
-            <span id="battery">🔋 --%</span>
+        <div class="page active">
+
+            <div class="status-bar">
+                <span id="time"></span>
+                <span id="battery">🔋 --%</span>
+            </div>
+
+        <!-- TOP NAV -->
+        <div class="top-nav">
+            <div>☰</div>
+            <div>🔔</div>
         </div>
 
-        <!-- HOME PAGE -->
-        <div class="app-content">
+        <!-- HEADER -->
+        <div class="header">
+            <h4>Hello,</h4>
+            <h2>User
+            👋</h2>
+            <p>Let's make our roads safer today!</p>
+        </div>
 
-            <h1>Welcome 👋</h1>
-            <p>Your pothole reporting dashboard</p>
+        <!-- STATS -->
+        <div class="stats">
 
-            <!-- PLACEHOLDER CONTENT -->
-            <button class="signup-btn">Report Pothole</button>
-            <button class="signup-btn">View Map</button>
+            <div>
+                <h2>12</h2>
+                <p>Reports</p>
+            </div>
+
+            <div>
+                <h2>5</h2>
+                <p>Fixed</p>
+            </div>
+
+            <div>
+                <h2>3</h2>
+                <p>Areas Helped</p>
+            </div>
+
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="actions">
+
+            <!-- REPORT -->
+            <div class="card"
+                 onclick="goToPage('step2.html')">
+
+                📷
+                <div>Report a Pothole</div>
+
+            </div>
+
+            <!-- MAP -->
+            <div class="card"
+                 onclick="goToPage('step1.html')">
+
+                🗺️
+                <div>View Map</div>
+
+            </div>
+
+        </div>
+
+        <!-- RECENT ACTIVITY -->
+        <div class="recent">
+
+            <!-- HEADER -->
+            <div class="recent-header">
+
+                <strong>Recent Activity</strong>
+
+                <span
+                    onclick="goToPage('reports.html')"
+                    style="cursor: pointer;">
+                    View all
+                </span>
+
+            </div>
+
+            <!-- SCROLLABLE LIST -->
+            <div class="recent-scroll">
+
+                <!-- ITEM -->
+                <div class="activity-item">
+
+                    <div class="thumb">
+                        📷
+                    </div>
+
+                    <div>
+
+                        <div class="title">
+                            Albert Road, Durban CBD
+                        </div>
+
+                        <div class="status blue">
+                            In Progress
+                        </div>
+
+                        <div class="time">
+                            17 May 2026, 10:30
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM -->
+                <div class="activity-item">
+
+                    <div class="thumb">
+                        📷
+                    </div>
+
+                    <div>
+
+                        <div class="title">
+                            Riverside Drive, Durban North
+                        </div>
+
+                        <div class="status orange">
+                            Pending
+                        </div>
+
+                        <div class="time">
+                            17 May 2026, 09:15
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM -->
+                <div class="activity-item">
+
+                    <div class="thumb">
+                        📷
+                    </div>
+
+                    <div>
+
+                        <div class="title">
+                            Smith Street, Johannesburg
+                        </div>
+
+                        <div class="status blue">
+                            In Progress
+                        </div>
+
+                        <div class="time">
+                            16 May 2026, 18:40
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM -->
+                <div class="activity-item">
+
+                    <div class="thumb">
+                        📷
+                    </div>
+
+                    <div>
+
+                        <div class="title">
+                            Victoria Road, Cape Town
+                        </div>
+
+                        <div class="status orange">
+                            Pending
+                        </div>
+
+                        <div class="time">
+                            16 May 2026, 14:10
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM -->
+                <div class="activity-item">
+
+                    <div class="thumb">
+                        📷
+                    </div>
+
+                    <div>
+
+                        <div class="title">
+                            Oxford Road, Sandton
+                        </div>
+
+                        <div class="status blue">
+                            In Progress
+                        </div>
+
+                        <div class="time">
+                            15 May 2026, 11:55
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BOTTOM NAV -->
+        <div class="bottom-nav">
+
+            <div class="nav-item active">
+                🏠<br>
+                <span>Home</span>
+            </div>
+
+            <div class="nav-item">
+                📍<br>
+                <span>Report</span>
+            </div>
+
+            <div class="nav-item">
+                🕒<br>
+                <span>Activity</span>
+            </div>
+
+            <div class="nav-item">
+                👤<br>
+                <span>Profile</span>
+            </div>
 
         </div>
 
     </div>
+
 </div>
 
 <script src="script.js"></script>
