@@ -1,260 +1,6 @@
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #1e1e1e;
-    font-family: Arial, sans-serif;
-}
-
-.phone {
-    width: 390px;
-    height: 780px;
-    background: black;
-    border-radius: 50px;
-    padding: 12px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
-}
-
-.screen {
-    width: 100%;
-    height: 100%;
-    background: #f5f5f5;
-    border-radius: 30px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-/* STATUS BAR */
-.status-bar {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    background: white;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-/* APP CONTENT */
-.app-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* LOGO */
-.logo {
-    width: 250px;
-    height: auto;
-}
-
-/* PAGES */
-.page {
-    display: none;
-    height: 100%;
-}
-
-.page.active {
-    display: flex;
-    flex-direction: column;
-}
-
-/* LOGIN PAGE */
-.login-page {
-    display: none;
-}
-/*OTP PAGE */
-.otp-container {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin: 20px 0;
-}
-
-.otp-box {
-    width: 40px;
-    height: 50px;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    outline: none;
-}
-/*MAP PAGE */
-#map {
-    width: 100%;
-    height: 250px;
-    border-radius: 12px;
-    margin-top: 10px;
-}
-
-
-Claim offer
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step 2</title>
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<div class="phone">
-    <div class="screen">
-
-        <!-- STATUS BAR -->
-        <div class="status-bar">
-            <span id="time"></span>
-            <span id="battery">🔋 --%</span>
-        </div>
-
-        <!-- STEP INDICATION -->
-        <div class="steps">
-            <div class="step active">1<br><span>Location</span></div>
-            <div class="step">2<br><span>Details</span></div>
-            <div class="step">3<br><span>Confirm</span></div>
-        </div>
-
-        <!-- DESCRIPTION INPUT -->
-        <input 
-            type="text" 
-            id="details" 
-            placeholder="Describe the pothole (e.g., size, depth, etc.)"
-        >
-
-        <!-- UPLOAD PICTURE -->
-        <div class="upload-section">
-            <label for="photoUpload" class="upload-btn">
-                📷 Upload Picture
-            </label>
-
-            <input 
-                type="file" 
-                id="photoUpload" 
-                accept="image/*"
-                hidden
-            >
-
-            <!-- IMAGE PREVIEW -->
-            <img id="preview" src="" alt="Preview Image">
-        </div>
-
-        <!-- BUTTON -->
-        <button class="next">Next</button>
-
-    </div>
-</div>
-
-<script src="script.js"></script>
-
-<script>
-    const photoUpload = document.getElementById("photoUpload");
-    const preview = document.getElementById("preview");
-
-    photoUpload.addEventListener("change", function () {
-        const file = this.files[0];
-
-        if (file) {
-            preview.src = URL.createObjectURL(file);
-            preview.style.display = "block";
-        }
-    });
-</script>
-
-</body>
-</html>
-
-no only html and js must be seperate
-
-HTML
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step 2</title>
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<div class="phone">
-    <div class="screen">
-
-        <!-- STATUS BAR -->
-        <div class="status-bar">
-            <span id="time"></span>
-            <span id="battery">🔋 --%</span>
-        </div>
-
-        <!-- STEP INDICATION -->
-        <div class="steps">
-            <div class="step active">1<br><span>Location</span></div>
-            <div class="step">2<br><span>Details</span></div>
-            <div class="step">3<br><span>Confirm</span></div>
-        </div>
-
-        <!-- DESCRIPTION INPUT -->
-        <input 
-            type="text" 
-            id="details" 
-            placeholder="Describe the pothole (e.g., size, depth, etc.)"
-        >
-
-        <!-- UPLOAD PICTURE -->
-        <div class="upload-section">
-
-            <label for="photoUpload" class="upload-btn">
-                📷 Upload Picture
-            </label>
-
-            <input 
-                type="file" 
-                id="photoUpload" 
-                accept="image/*"
-                hidden
-            >
-
-            <!-- IMAGE PREVIEW -->
-            <img id="preview" src="" alt="Preview Image">
-
-        </div>
-
-        <!-- BUTTON -->
-        <button class="next">Next</button>
-
-    </div>
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
-JavaScript (script.js)
-// IMAGE PREVIEW
-const photoUpload = document.getElementById("photoUpload");
-const preview = document.getElementById("preview");
-
-photoUpload.addEventListener("change", function () {
-
-    const file = this.files[0];
-
-    if (file) {
-        preview.src = URL.createObjectURL(file);
-        preview.style.display = "block";
-    }
-
-});
+/* =========================
+   BASE LAYOUT
+========================= */
 
 body {
     margin: 0;
@@ -278,472 +24,210 @@ body {
 .screen {
     width: 100%;
     height: 100%;
-    background: #f5f5f5;
+    background: #f4f5ff;
     border-radius: 30px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
-/* STATUS BAR */
+/* =========================
+   STATUS BAR
+========================= */
+
 .status-bar {
     display: flex;
     justify-content: space-between;
-    padding: 15px;
+    padding: 12px 15px;
     background: white;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
 }
 
-/* APP CONTENT */
-.app-content {
-    flex: 1;
+/* =========================
+   TOP NAV
+========================= */
+
+.top-nav {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* LOGO */
-.logo {
-    width: 250px;
-    height: auto;
-}
-
-/* PAGES */
-.page {
-    display: none;
-    height: 100%;
-}
-
-.page.active {
-    display: flex;
-    flex-direction: column;
-}
-
-/* LOGIN PAGE */
-.login-page {
-    display: none;
-}
-/*OTP PAGE */
-.otp-container {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin: 20px 0;
-}
-
-.otp-box {
-    width: 40px;
-    height: 50px;
+    justify-content: space-between;
+    padding: 15px 20px;
     font-size: 20px;
-    text-align: center;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    outline: none;
-}
-/*MAP PAGE */
-#map {
-    width: 100%;
-    height: 250px;
-    border-radius: 12px;
-    margin-top: 10px;
 }
 
+/* =========================
+   HEADER
+========================= */
 
-include this at the end of my css
-
-/* STEP INDICATOR */
-.steps {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px 10px;
-    background: white;
+.header {
+    padding: 10px 20px;
 }
 
-.step {
-    text-align: center;
-    font-size: 14px;
-    color: gray;
-    font-weight: bold;
-}
-
-.step.active {
-    color: #2d8cff;
-}
-
-.step span {
-    font-size: 12px;
-    font-weight: normal;
-}
-
-/* DETAILS INPUT */
-#details {
-    width: 85%;
-    margin: 20px auto;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    font-size: 14px;
-    outline: none;
-}
-
-/* UPLOAD SECTION */
-.upload-section {
-    width: 85%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-/* UPLOAD BUTTON */
-.upload-btn {
-    background: #2d8cff;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* IMAGE PREVIEW */
-#preview {
-    width: 100%;
-    max-height: 220px;
-    object-fit: cover;
-    border-radius: 15px;
-    display: none;
-    border: 2px solid #ccc;
-}
-
-/* NEXT BUTTON */
-.next {
-    width: 85%;
-    margin: auto auto 30px auto;
-    padding: 15px;
-    border: none;
-    border-radius: 15px;
-    background: #2d8cff;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-gimme the css code for this
-
-/* STEP INDICATOR */
-.steps {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px 10px;
-    background: white;
-}
-
-.step {
-    text-align: center;
-    font-size: 14px;
-    color: gray;
-    font-weight: bold;
-}
-
-.step.active {
-    color: #2d8cff;
-}
-
-.step span {
-    font-size: 12px;
-    font-weight: normal;
-}
-
-/* DETAILS INPUT */
-#details {
-    width: 85%;
-    margin: 20px auto;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    font-size: 14px;
-    outline: none;
-}
-
-/* UPLOAD SECTION */
-.upload-section {
-    width: 85%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-
-Claim offer
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step 2</title>
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<div class="phone">
-    <div class="screen">
-
-        <!-- STATUS BAR -->
-        <div class="status-bar">
-            <span id="time"></span>
-            <span id="battery">🔋 --%</span>
-        </div>
-
-        <!-- STEP INDICATION -->
-        <div class="steps">
-            <div class="step active">1<br><span>Location</span></div>
-            <div class="step">2<br><span>Details</span></div>
-            <div class="step">3<br><span>Confirm</span></div>
-        </div>
-
-        <!-- DESCRIPTION INPUT -->
-        <input 
-            type="text" 
-            id="details" 
-            placeholder="Describe the pothole (e.g., size, depth, etc.)"
-        >
-
-        <!-- UPLOAD PICTURE -->
-        <div class="upload-section">
-            <label for="photoUpload" class="upload-btn">
-                📷 Upload Picture
-            </label>
-
-            <input 
-                type="file" 
-                id="photoUpload" 
-                accept="image/*"
-                hidden
-            >
-
-            <!-- IMAGE PREVIEW -->
-            <img id="preview" src="" alt="Preview Image">
-        </div>
-
-        <!-- BUTTON -->
-        <button class="next">Next</button>
-
-    </div>
-</div>
-
-<script src="script.js"></script>
-
-<script>
-    const photoUpload = document.getElementById("photoUpload");
-    const preview = document.getElementById("preview");
-
-    photoUpload.addEventListener("change", function () {
-        const file = this.files[0];
-
-        if (file) {
-            preview.src = URL.createObjectURL(file);
-            preview.style.display = "block";
-        }
-    });
-</script>
-
-</body>
-</html>
-
-no only html and js must be seperate
-
-HTML
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step 2</title>
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<div class="phone">
-    <div class="screen">
-
-        <!-- STATUS BAR -->
-        <div class="status-bar">
-            <span id="time"></span>
-            <span id="battery">🔋 --%</span>
-        </div>
-
-        <!-- STEP INDICATION -->
-        <div class="steps">
-            <div class="step active">1<br><span>Location</span></div>
-            <div class="step">2<br><span>Details</span></div>
-            <div class="step">3<br><span>Confirm</span></div>
-        </div>
-
-        <!-- DESCRIPTION INPUT -->
-        <input 
-            type="text" 
-            id="details" 
-            placeholder="Describe the pothole (e.g., size, depth, etc.)"
-        >
-
-        <!-- UPLOAD PICTURE -->
-        <div class="upload-section">
-
-            <label for="photoUpload" class="upload-btn">
-                📷 Upload Picture
-            </label>
-
-            <input 
-                type="file" 
-                id="photoUpload" 
-                accept="image/*"
-                hidden
-            >
-
-            <!-- IMAGE PREVIEW -->
-            <img id="preview" src="" alt="Preview Image">
-
-        </div>
-
-        <!-- BUTTON -->
-        <button class="next">Next</button>
-
-    </div>
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
-JavaScript (script.js)
-// IMAGE PREVIEW
-const photoUpload = document.getElementById("photoUpload");
-const preview = document.getElementById("preview");
-
-photoUpload.addEventListener("change", function () {
-
-    const file = this.files[0];
-
-    if (file) {
-        preview.src = URL.createObjectURL(file);
-        preview.style.display = "block";
-    }
-
-});
-
-body {
+.header h4 {
     margin: 0;
-    height: 100vh;
+    color: gray;
+    font-weight: normal;
+}
+
+.header h2 {
+    margin: 5px 0;
+    font-size: 22px;
+}
+
+.header p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* =========================
+   STATS CARD
+========================= */
+
+.stats {
+    margin: 15px;
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #1e1e1e;
-    font-family: Arial, sans-serif;
+    justify-content: space-around;
+    color: white;
+    text-align: center;
 }
 
-.phone {
-    width: 390px;
-    height: 780px;
-    background: black;
-    border-radius: 50px;
-    padding: 12px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+.stats h2 {
+    margin: 0;
+    font-size: 22px;
 }
 
-.screen {
-    width: 100%;
-    height: 100%;
-    background: #f5f5f5;
-    border-radius: 30px;
-    overflow: hidden;
+.stats p {
+    margin: 5px 0 0;
+    font-size: 12px;
+}
+
+/* =========================
+   ACTION CARDS
+========================= */
+
+.actions {
     display: flex;
-    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
 }
 
-/* STATUS BAR */
-.status-bar {
+.card {
+    flex: 1;
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card:first-child {
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
+    color: white;
+}
+
+.card:last-child {
+    background: #eee;
+    color: #333;
+}
+
+/* =========================
+   RECENT ACTIVITY
+========================= */
+
+.recent {
+    padding: 15px;
+}
+
+.recent-header {
     display: flex;
     justify-content: space-between;
-    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.recent-header span {
+    color: #8e2de2;
+    font-size: 13px;
+}
+
+.activity-item {
+    display: flex;
+    gap: 12px;
     background: white;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.thumb {
+    width: 45px;
+    height: 45px;
+    background: #ddd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-weight: bold;
     font-size: 14px;
+}
+
+.status {
+    font-size: 12px;
+}
+
+.status.blue {
+    color: #2d8cff;
+}
+
+.status.orange {
+    color: orange;
+}
+
+.time {
+    font-size: 11px;
+    color: gray;
+}
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+}
+
+.nav-item {
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+    cursor: pointer;
+}
+
+.nav-item.active {
+    color: #8e2de2;
     font-weight: bold;
 }
 
-/* APP CONTENT */
-.app-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
+.nav-item span {
+    font-size: 11px;
 }
 
-/* LOGO */
-.logo {
-    width: 250px;
-    height: auto;
-}
+/* =========================
+   STEP PAGE (STEP 2)
+========================= */
 
-/* PAGES */
-.page {
-    display: none;
-    height: 100%;
-}
-
-.page.active {
-    display: flex;
-    flex-direction: column;
-}
-
-/* LOGIN PAGE */
-.login-page {
-    display: none;
-}
-/*OTP PAGE */
-.otp-container {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin: 20px 0;
-}
-
-.otp-box {
-    width: 40px;
-    height: 50px;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    outline: none;
-}
-/*MAP PAGE */
-#map {
-    width: 100%;
-    height: 250px;
-    border-radius: 12px;
-    margin-top: 10px;
-}
-
-
-include this at the end of my css
-
-/* STEP INDICATOR */
 .steps {
     display: flex;
     justify-content: space-around;
@@ -767,7 +251,7 @@ include this at the end of my css
     font-weight: normal;
 }
 
-/* DETAILS INPUT */
+/* INPUT */
 #details {
     width: 85%;
     margin: 20px auto;
@@ -778,7 +262,7 @@ include this at the end of my css
     outline: none;
 }
 
-/* UPLOAD SECTION */
+/* UPLOAD */
 .upload-section {
     width: 85%;
     margin: 0 auto;
@@ -788,7 +272,6 @@ include this at the end of my css
     gap: 15px;
 }
 
-/* UPLOAD BUTTON */
 .upload-btn {
     background: #2d8cff;
     color: white;
@@ -799,7 +282,6 @@ include this at the end of my css
     text-align: center;
 }
 
-/* IMAGE PREVIEW */
 #preview {
     width: 100%;
     max-height: 220px;
@@ -816,111 +298,560 @@ include this at the end of my css
     padding: 15px;
     border: none;
     border-radius: 15px;
-    background: #2d8cff;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-gimme the css code for this
-
-/* STEP INDICATOR */
-.steps {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px 10px;
     background: white;
-}
-
-.step {
-    text-align: center;
-    font-size: 14px;
-    color: gray;
-    font-weight: bold;
-}
-
-.step.active {
-    color: #2d8cff;
-}
-
-.step span {
-    font-size: 12px;
-    font-weight: normal;
-}
-
-/* DETAILS INPUT */
-#details {
-    width: 85%;
-    margin: 20px auto;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    font-size: 14px;
-    outline: none;
-}
-
-/* UPLOAD SECTION */
-.upload-section {
-    width: 85%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-/* UPLOAD BUTTON */
-.upload-btn {
-    background: #2d8cff;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* IMAGE PREVIEW */
-#preview {
-    width: 100%;
-    max-height: 220px;
-    object-fit: cover;
-    border-radius: 15px;
-    display: none;
-    border: 2px solid #ccc;
-}
-
-/* NEXT BUTTON */
-.next {
-    width: 85%;
-    margin: auto auto 30px auto;
-    padding: 15px;
-    border: none;
-    border-radius: 15px;
-    background:white;
     color: black;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
 }
 
-/* UPLOAD SECTION */
-.upload-section {
-    width: 85%;
-    margin: 0 auto;
+/* =========================
+   OTHER ELEMENTS
+========================= */
+
+.app-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.logo {
+    width: 250px;
+    height: auto;
+}
+
+.page {
+    display: none;
+    height: 100%;
+}
+
+.page.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-page {
+    display: none;
+}
+
+.otp-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.otp-box {
+    width: 40px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#map {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+/* =========================
+   REPORTS PAGE UI FIX (ADD-ON)
+========================= */
+
+/* Screen background */
+.screen {
+    background: #f5f6fa;
+}
+
+/* =========================
+   TOP NAV (My Reports)
+========================= */
+
+.reports-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 18px 15px;
+    background: #f5f6fa;
+}
+
+.reports-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+}
+
+.back-btn {
+    position: absolute;
+    left: 15px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #8e2de2;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* =========================
+   FILTER TABS
+========================= */
+
+.filter-tabs {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    gap: 10px;
+    align-items: center;
+}
+
+.tab {
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    background: #eee;
+    color: #555;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #8e2de2;
+    color: white;
+    font-weight: bold;
+}
+
+.filter-tabs .tab:not(.active) {
+    background: transparent;
+    color: #8e2de2;
+    font-weight: 600;
+}
+
+/* =========================
+   REPORT LIST
+========================= */
+
+.report-list {
+    padding: 10px 15px 80px 15px;
+    overflow-y: auto;
+}
+
+/* =========================
+   REPORT CARD
+========================= */
+
+.report-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 12px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* thumbnail */
+.report-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/* text section */
+.report-info {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.report-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #222;
+}
+
+.report-date {
+    font-size: 12px;
+    color: gray;
+    margin-top: 3px;
+}
+
+/* =========================
+   STATUS BADGES
+========================= */
+
+.badge {
+    font-size: 11px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.badge.progress {
+    background: #8e2de2;
+    color: white;
+}
+
+.badge.pending {
+    background: orange;
+    color: white;
+}
+
+.badge.fixed {
+    background: #2ecc71;
+    color: white;
+}
+
+/* =========================
+   BOTTOM NAV FIX
+========================= */
+
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 12px 0;
+    border-top: 1px solid #eee;
+}
+
+.nav-item {
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+}
+
+.nav-item.active {
+    color: #8e2de2;
+}
+/* =========================
+   MUNICIPALITY DASHBOARD
+========================= */
+
+.municipality-dashboard {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 95px;
+    background: #111827;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px 10px;
+    color: white;
+}
+
+.logo-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #8e2de2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
     gap: 15px;
+    width: 100%;
 }
 
-/* UPLOAD BUTTON */
-.upload-btn {
-    background: white;
-    color: black;
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 5px;
+    border-radius: 16px;
+    color: #d1d5db;
     cursor: pointer;
-    font-weight: bold;
-    text-align: center;
+    transition: 0.3s;
 }
 
+.menu-item span {
+    font-size: 20px;
+}
+
+.menu-item p {
+    font-size: 11px;
+    margin: 0;
+}
+
+.menu-item.active {
+    background: #8e2de2;
+    color: white;
+}
+
+.logout-btn {
+    margin-top: auto;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 12px;
+    width: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    flex: 1;
+    padding: 18px;
+    overflow-y: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.dashboard-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.breadcrumb {
+    color: #8e2de2;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.dashboard-header h1 {
+    font-size: 22px;
+    color: #111827;
+    margin: 0;
+}
+
+.alert-btn {
+    border: none;
+    background: white;
+    padding: 12px;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   STATS GRID
+========================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.stat-card p {
+    margin: 0;
+    color: gray;
+    font-size: 12px;
+}
+
+.stat-card h2 {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #111827;
+}
+
+/* =========================
+   MAP SECTION
+========================= */
+
+.map-section {
+    margin-bottom: 20px;
+}
+
+.section-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.section-top h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #111827;
+}
+
+.section-top span {
+    color: #8e2de2;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.map-box {
+    width: 100%;
+    height: 220px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #f5deb3 100%);
+}
+
+/* =========================
+   MAP MARKERS
+========================= */
+
+.marker {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 12px rgba(0,0,0,0.25);
+}
+
+.red {
+    background: #ef4444;
+}
+
+.yellow {
+    background: #f59e0b;
+}
+
+.green {
+    background: #10b981;
+}
+
+.one {
+    top: 40px;
+    left: 70px;
+}
+
+.two {
+    top: 100px;
+    left: 180px;
+}
+
+.three {
+    top: 60px;
+    right: 80px;
+}
+
+.four {
+    bottom: 40px;
+    right: 50px;
+}
+
+.five {
+    bottom: 60px;
+    left: 130px;
+}
+
+/* =========================
+   REPORTS SECTION
+========================= */
+
+.reports-section {
+    background: white;
+    border-radius: 20px;
+    padding: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.report-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.report-item:last-child {
+    border-bottom: none;
+}
+
+.report-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.report-info {
+    flex: 1;
+}
+
+.report-info h4 {
+    margin: 0;
+    font-size: 13px;
+    color: #111827;
+}
+
+.report-info p {
+    margin-top: 4px;
+    font-size: 11px;
+    color: gray;
+}
+
+.status {
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.ongoing {
+    background: #ede9fe;
+    color: #7c3aed;
+}
+
+.pending {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.resolved {
+    background: #d1fae5;
+    color: #059669;
+}
